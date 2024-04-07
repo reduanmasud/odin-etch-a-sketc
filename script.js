@@ -1,8 +1,8 @@
 const BOARD_WRAPPER = document.querySelector("#board");
 
 let board = createBoard({
-    row: 16,
-    column: 16,
+    row: 24,
+    column: 24,
     cellHeight: "20px",
     cellWidth: "20px",
 });
