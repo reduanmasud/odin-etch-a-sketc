@@ -75,6 +75,10 @@ function displayBoard({selector, board = [], rowClass})
 
         row.forEach( (cell) => {
             rowWrapper.appendChild(cell);
+            cell.onmouseover = (e)=>{
+
+                e.target.style.backgroundColor = "#000000"
+            }
         })
 
         root.appendChild(rowWrapper);
