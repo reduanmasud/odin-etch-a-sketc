@@ -1,0 +1,80 @@
+/* Reset box model and padding */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set default body styles */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    background-color: #f8f9fa;
+    margin: 0;
+}
+
+/* Headings styles */
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.75rem;
+}
+
+/* Basic link styles */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive image */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/*
+* From here
+*/
+* {
+    outline: 1px solid red;
+}
+
+#main-area {
+    width: 100vw;
+    display: flex;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+#main-area > #controlls {
+
+
+}
+#main-area > #canvas {
+    flex-grow: 2;
+
+}
+
+#board {
+    display: flex;
+    padding:5px;
+}
