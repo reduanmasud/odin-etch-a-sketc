@@ -17,13 +17,6 @@ body {
     margin: 0;
 }
 
-/* Headings styles */
-h1, h2, h3, h4, h5, h6 {
-    margin-bottom: 10px;
-    font-weight: bold;
-    color: #333;
-}
-
 h1 {
     font-size: 2.5rem;
 }
@@ -55,17 +48,49 @@ img {
 /*
 * From here
 */
+#nav {
+    background-color: #343a40;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
 
 #main-area {
-    width: 100vw;
     display: flex;
-    margin-bottom: 10px;
-    padding: 5px;
+    justify-content: space-between;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 /* #main-area > #controlls {
 
 
 } */
+
+#controlls {
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 30%;
+    border-radius: 8px;
+}
+
+#controlls h2 {
+    margin-bottom: 20px;
+    font-size: 24px !important;
+}
+.control-section {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
 #main-area > #canvas {
     flex-grow: 2;
 
