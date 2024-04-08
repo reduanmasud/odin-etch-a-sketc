@@ -3,8 +3,8 @@ const BOARD_WRAPPER = document.querySelector("#board");
 let board = createBoard({
     row: 24,
     column: 24,
-    cellHeight: "20px",
-    cellWidth: "20px",
+    cellHeight: "50px",
+    cellWidth: "50px",
 });
 
 displayBoard({
@@ -12,10 +12,9 @@ displayBoard({
     board: board,
 })
 
-
-
-
-
+const CONTROLS = {
+    color: document.querySelector("#cell_color"),
+}
 
 
 
@@ -77,7 +76,7 @@ function displayBoard({selector, board = [], rowClass})
             rowWrapper.appendChild(cell);
             cell.onmouseover = (e)=>{
 
-                e.target.style.backgroundColor = "#000000"
+                e.target.style.backgroundColor = CONTROLS.color.value
             }
         })
 
