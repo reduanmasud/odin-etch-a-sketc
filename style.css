@@ -55,9 +55,6 @@ img {
 /*
 * From here
 */
-* {
-    outline: 1px solid red;
-}
 
 #main-area {
     width: 100vw;
@@ -76,5 +73,13 @@ img {
 
 #board {
     display: flex;
-    padding:5px;
+    background-color: #e9ecef;
+    width: fit-content;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+
+#board >div:hover{
+    background-color: #adb5bd;
 }

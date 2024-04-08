@@ -44,8 +44,8 @@ const CONTROLS = {
 let board = createBoard({
     row: 16,
     column: 16,
-    cellHeight: "50px",
-    cellWidth: "50px",
+    cellHeight: 600,
+    cellWidth: 600,
 });
 
 displayBoard({
@@ -78,8 +78,8 @@ function createBoard({row, column, cellHeight, cellWidth, cellBackground, cellCl
         for(let j = 0; j < column; j++)
         {
             let cell = document.createElement("div");
-            cell.style.height = cellHeight || "50px";
-            cell.style.width = cellWidth || "50px";
+            cell.style.height = `${cellHeight / column - 1}px` || "50px";
+            cell.style.width = `${cellWidth / row -1}px` || "50px";
             if(cellClass) cell.setAttribute("class", cellClass);
 
             Object.assign(cell.dataset, {row: i, collumn: j}, cellProperties);
