@@ -51,6 +51,7 @@ let board = createBoard({
 displayBoard({
     selector: "#board",
     board: board,
+    rowClass: "cell_row"
 })
 
 
