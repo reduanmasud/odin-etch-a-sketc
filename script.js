@@ -1,8 +1,44 @@
 const BOARD_WRAPPER = document.querySelector("#board");
 
 const CONTROLS = {
-    color: () => document.querySelector("#cell_color").value ?? "#000000",
-    clickToDraw: () => document.querySelector("#click_to_draw").checked, 
+    color: () => {
+        
+        if(CONTROLS.multiColorEnabled())
+        {
+            const backgroundColors = [
+                "#FF5733", // Orange
+                "#C70039", // Red
+                "#900C3F", // Dark Red
+                "#FFC300", // Yellow
+                "#FF5733", // Orange
+                "#FFC300", // Yellow
+                "#DAF7A6", // Light Green
+                "#4CAF50", // Green
+                "#2196F3", // Blue
+                "#9B59B6", // Purple
+                "#F39C12", // Orange
+                "#8E44AD", // Purple
+                "#E74C3C", // Red
+                "#2C3E50", // Dark Blue
+                "#16A085", // Teal
+                "#F1C40F", // Bright Yellow
+            ];
+            
+            
+            const randomColor = backgroundColors[Math.floor(Math.random() * backgroundColors.length)];
+            return randomColor;
+            
+        }
+        else
+        {
+           return document.querySelector("#cell_color").value ?? "#000000"
+        }
+    
+    
+    },
+    clickToDraw: () => document.querySelector("#click_to_draw").checked,
+    multiColorEnabled: () => document.querySelector("#multi_color").checked,
+
 }
 
 let board = createBoard({
