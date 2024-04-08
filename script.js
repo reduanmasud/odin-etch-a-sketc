@@ -46,6 +46,27 @@ let board = createBoard({
     cellWidth: 600,
 });
 
+const GRID_SIZE = document.querySelector("#grid_size");
+const GRID_APPLY_BTN = document.querySelector("#grid_size_button");
+
+GRID_APPLY_BTN.addEventListener("click", (e) => {
+    console.log("click")
+    if(GRID_SIZE.value > 0)
+    {
+        board = createBoard({
+            row: GRID_SIZE.value,
+            column: GRID_SIZE.value,
+            cellWidth: 600,
+            cellHeight: 600
+        })
+        displayBoard({
+            selector: "#board",
+            board: board,
+            rowClass: "cell_row"
+        })
+    }
+})
+
 displayBoard({
     selector: "#board",
     board: board,
@@ -102,6 +123,7 @@ function createBoard({row, column, cellHeight, cellWidth, cellBackground, cellCl
 function displayBoard({selector, board = [], rowClass})
 {
     let root = document.querySelector(selector);
+    root.innerHTML = "";
     let drag = false;
     board.forEach( ( row ) => {
         
@@ -127,7 +149,6 @@ function displayBoard({selector, board = [], rowClass})
                 }
                 window.onmouseup = (e) => {
                     drag = false;
-                    console.log("MOUSEUP")
                 }
             
             

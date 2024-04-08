@@ -169,8 +169,9 @@ input:checked + .switch-slider::after {
     background-color: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    width: calc(65% - 20px); /* Adjusted width with margin */
     border-radius: 8px;
+    width: fit-content;
+    padding: 20px 60px;
 }
 
 #canvas h2 {
@@ -184,6 +185,7 @@ input:checked + .switch-slider::after {
     background-color: #e9ecef;
     border-radius: 10px;
     overflow: hidden;
+    width: fit-content;
 }
 
 /* Individual board cells */
