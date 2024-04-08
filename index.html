@@ -14,16 +14,25 @@
         <div id="controlls">
             <h2>Controlls</h2>
             <div class="control-section">
-                <label for="cell_color">Select Color:</label>
-                <input type="color" name="color" id="cell_color">
+                <label for="grid_size">Grid Size:</label>
+                <input type="number" id="grid_size" class="grid-size-input" min="1" max="100">
+                <button type="button" class="apply-button">Apply</button>
             </div>
+            
+            <div class="control-section">
+                <label for="cell_color">Select Color:</label>
+                <input type="color" id="cell_color" class="custom-color-picker">
+            </div>            
             <div class="control-section">
                 <label for="click_to_draw">Drag-to-Paint:</label>
-                <input class="switch-input" id="click_to_draw" name="click_to_draw" type="checkbox" />
+                <input class="switch-input visually-hidden" id="click_to_draw" name="click_to_draw" type="checkbox" />
+                <label for="click_to_draw" class="switch-slider"></label>
             </div>
+            
             <div class="control-section">
                 <label for="multi_color">Multi-Color:</label>
-                <input class="switch-input" id="multi_color" name="multi_color" type="checkbox" />
+                <input class="switch-input visually-hidden" id="multi_color" name="multi_color" type="checkbox" />
+                <label for="multi_color" class="switch-slider"></label>
             </div>
         </div>
         <div id="canvas">

@@ -1,5 +1,4 @@
 const BOARD_WRAPPER = document.querySelector("#board");
-
 const CONTROLS = {
     color: () => {
         
@@ -33,13 +32,12 @@ const CONTROLS = {
         {
            return document.querySelector("#cell_color").value ?? "#000000"
         }
-    
-    
     },
     clickToDraw: () => document.querySelector("#click_to_draw").checked,
     multiColorEnabled: () => document.querySelector("#multi_color").checked,
 
 }
+
 
 let board = createBoard({
     row: 16,
@@ -53,8 +51,6 @@ displayBoard({
     board: board,
     rowClass: "cell_row"
 })
-
-
 
 
 
@@ -140,6 +136,4 @@ function displayBoard({selector, board = [], rowClass})
         root.appendChild(rowWrapper);
 
     })   
-
-
 }

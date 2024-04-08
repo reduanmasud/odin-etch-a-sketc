@@ -1,3 +1,5 @@
+
+
 /* Reset box model and padding */
 *,
 *::before,
@@ -17,17 +19,10 @@ body {
     margin: 0;
 }
 
-h1 {
-    font-size: 2.5rem;
-}
-
-h2 {
-    font-size: 2rem;
-}
-
-h3 {
-    font-size: 1.75rem;
-}
+/* Heading styles */
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
 
 /* Basic link styles */
 a {
@@ -45,9 +40,7 @@ img {
     height: auto;
 }
 
-/*
-* From here
-*/
+/* Container for navigation */
 #nav {
     background-color: #343a40;
     color: #fff;
@@ -55,6 +48,7 @@ img {
     text-align: center;
 }
 
+/* Main area container */
 #main-area {
     display: flex;
     justify-content: space-between;
@@ -62,11 +56,8 @@ img {
     max-width: 1200px;
     margin: 0 auto;
 }
-/* #main-area > #controlls {
 
-
-} */
-
+/* Controls container */
 #controlls {
     background-color: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -77,41 +68,152 @@ img {
 
 #controlls h2 {
     margin-bottom: 20px;
-    font-size: 24px !important;
+    font-size: 24px;
 }
+
+/* General styles for control sections */
 .control-section {
+    display: flex;
+    align-items: center;
     margin-bottom: 20px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
-label {
-    display: block;
+
+/* Label styles */
+.control-section label {
     font-weight: bold;
-    margin-bottom: 5px;
+    margin-right: 10px;
 }
 
-#main-area > #canvas {
-    flex-grow: 2;
 
+/* Hide the default checkbox visually */
+.visually-hidden {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
 }
 
+/* Styling for the switch slider */
+.switch-slider {
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+    background-color: #ccc;
+    border-radius: 13px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Styling for the switch slider's active state */
+.switch-slider::after {
+    content: '';
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: white;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s;
+}
+
+/* Styling for the checked state of the switch slider */
+input:checked + .switch-slider {
+    background-color: #4CAF50; /* Green color */
+}
+
+/* Positioning and animation for the switch slider's thumb */
+input:checked + .switch-slider::after {
+    transform: translateX(24px); /* Move the thumb to the right */
+}
+
+/* Styling for input fields */
+.grid-size-input {
+    width: 60px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* Styling for apply button */
+.apply-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.apply-button:hover {
+    background-color: #0056b3;
+}
+
+.apply-button:active {
+    background-color: #004080;
+}
+
+/* Canvas container */
+#canvas {
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: calc(65% - 20px); /* Adjusted width with margin */
+    border-radius: 8px;
+}
+
+#canvas h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* Board container */
 #board {
     display: flex;
     background-color: #e9ecef;
-    width: fit-content;
     border-radius: 10px;
     overflow: hidden;
 }
 
-
-#board > div > div
-{
+/* Individual board cells */
+#board > div > div {
     transition: background-color 0.9s ease;
 }
 
-/* #board >div:hover{
-    background-color: #adb5bd;
-} */
+/* Custom color picker */
+.custom-color-picker {
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    outline: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.custom-color-picker::-webkit-color-swatch-wrapper {
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+}
+
+.custom-color-picker:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
 
 
