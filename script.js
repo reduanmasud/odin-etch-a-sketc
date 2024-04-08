@@ -1,8 +1,13 @@
 const BOARD_WRAPPER = document.querySelector("#board");
 
+const CONTROLS = {
+    color: () => document.querySelector("#cell_color").value ?? "#000000",
+    clickToDraw: () => document.querySelector("#click_to_draw").checked, 
+}
+
 let board = createBoard({
-    row: 24,
-    column: 24,
+    row: 16,
+    column: 16,
     cellHeight: "50px",
     cellWidth: "50px",
 });
@@ -12,9 +17,6 @@ displayBoard({
     board: board,
 })
 
-const CONTROLS = {
-    color: document.querySelector("#cell_color"),
-}
 
 
 
@@ -67,17 +69,35 @@ function createBoard({row, column, cellHeight, cellWidth, cellBackground, cellCl
 function displayBoard({selector, board = [], rowClass})
 {
     let root = document.querySelector(selector);
-
+    let drag = false;
     board.forEach( ( row ) => {
         
         let rowWrapper = document.createElement("div", { className : rowClass } );
 
         row.forEach( (cell) => {
             rowWrapper.appendChild(cell);
-            cell.onmouseover = (e)=>{
+            
+                window.onmousedown = (e) => {
+                    drag = true;
 
-                e.target.style.backgroundColor = CONTROLS.color.value
-            }
+                }
+                cell.onmouseover = (e)=>{
+                    
+                    if(CONTROLS.clickToDraw())
+                    {
+                        if(drag) e.target.style.backgroundColor = CONTROLS.color();
+                    } else {
+                        e.target.style.backgroundColor = CONTROLS.color();
+                    }
+                        
+                    
+                }
+                window.onmouseup = (e) => {
+                    drag = false;
+                    console.log("MOUSEUP")
+                }
+            
+            
         })
 
         root.appendChild(rowWrapper);
