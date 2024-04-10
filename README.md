@@ -1,6 +1,6 @@
 # Etch-a-Sketch Game
 
-Welcome to the Etch-a-Sketch game repository! This project aims to recreate the classic drawing toy experience in a digital form using HTML, CSS, and JavaScript.
+Welcome to the Etch-a-Sketch game git repository! This project aims to recreate the classic drawing toy experience in a digital form using HTML, CSS, and JavaScript.
 
 ## Table of Contents
 
